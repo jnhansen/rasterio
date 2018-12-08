@@ -112,7 +112,7 @@ def from_bounds(west, south, east, north, width, height):
     `height` in number of pixels.
     """
     return Affine.translation(west, north) * Affine.scale(
-        (east - west) / width, (south - north) / height)
+        (east - west) / (width - 1), (south - north) / (height - 1))
 
 
 def array_bounds(height, width, transform):
